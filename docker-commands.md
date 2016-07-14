@@ -35,3 +35,32 @@ sudo docker ps -l
 ```
 sudo docker stop container_name
 ```
+*Removes a container*
+```
+sudo docker rm {container_id}
+```
+*Flags during run command*
+
+  *--name : to give name for container*
+
+  *-d : To run the container in detach mode(Background)*
+
+  *-e or --env : To set the enviornment in docker like MYSQL_ROOT_PASSWORD=123*
+
+  *-p : To bind the docker port to host port, like 3306:3306*
+```
+sudo docker run --name db -d -e MYSQL_ROOT_PASSWORD=123 -p 3306:3306 mysql:latest
+```
+*Executes command in terminal in inetractive mode on container named db*
+```
+sudo docker exec -it db /bin/bash
+```
+*Build a docker image with a doker file with given name and tag*
+```
+sudo docker build -t {imagename:tag} .
+```
+*To list all docker images*
+```
+sudo docker images
+```
+
